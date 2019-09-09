@@ -1,0 +1,18 @@
+
+1). Downloaded CSS from : https://bootswatch.com/
+
+2). https://blog.bitsrc.io/how-to-use-jquery-with-angular-when-you-absolutely-have-to-42c8b6a37ff9
+
+3). https://www.javaguides.net/2019/06/how-to-add-bootstrap-to-angular-8.html
+
+4). Application development using angular8. good explanaton
+
+    https://www.javaguides.net/2019/06/angular-8-crud-example-tutorial.html
+
+5). https://www.bootstrapdash.com/bootstrap-4-tutorial/bootstrap-grid/
+
+6). https://www.w3schools.com/bootstrap4/bootstrap_buttons.asp
+
+7). https://www.w3schools.com/bootstrap4/bootstrap_colors.asp
+
+8). https://www.w3schools.com/bootstrap4/bootstrap_spinners.asp
