@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesComponent implements OnInit {
 
-  constructor() { }
+  public showForm = true;
+  public color: string;
+
+  constructor() {
+    this.color = '';
+
+  }
 
   ngOnInit() {
+  }
+
+  public save() {
+    console.info("Color : "+this.color);
   }
 
 }
