@@ -1,6 +1,8 @@
 
 1). Downloaded CSS from : https://bootswatch.com/
 
+    https://bootswatch.com/solar/
+
 2). https://blog.bitsrc.io/how-to-use-jquery-with-angular-when-you-absolutely-have-to-42c8b6a37ff9
 
 3). https://www.javaguides.net/2019/06/how-to-add-bootstrap-to-angular-8.html
@@ -18,3 +20,5 @@
 8). https://www.w3schools.com/bootstrap4/bootstrap_spinners.asp
 
 9). https://www.w3schools.com/howto/howto_css_responsive_form.asp
+
+10). https://www.npmjs.com/package/ngx-color-picker
