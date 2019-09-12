@@ -1,5 +1,7 @@
+import { Budget } from './app/models/budget';
+import { Category } from './app/models/transaction';
 
-const mockBudgetList = [
+export const mockBudgetList: Budget[] = [
   {
     budgetCategoryName: 'Bill',
     categoryColorCode: '#6610f2',
@@ -41,3 +43,33 @@ const mockBudgetList = [
     spentAmountPercentage: 100
   }
 ];
+
+export const mockCategoryList: Category[] = [
+    {
+      id: 1,
+      name: 'Bill',
+      colorCode: '#6610f2'
+    },
+    {
+      id: 2,
+      name: 'Housing',
+      colorCode: '#e83e8c'
+    },
+    {
+      id: 3,
+      name: 'Transportation',
+      colorCode: '#28a745'
+    },
+    {
+      id: 1,
+      name: 'Shopping',
+      colorCode: '#fd7e14'
+    },
+    {
+      id: 1,
+      name: 'Entertainment',
+      colorCode: '#343a40'
+    }
+];
+
+

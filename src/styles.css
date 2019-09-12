@@ -3,3 +3,13 @@
 /*
   we configured the CSS in angular.json file for both css and js script files
 */
+
+.roundbutton {border-radius: 100%;}
+
+.categoryColorBox {
+  display: inline-block;; /* the default for span */
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+}
+

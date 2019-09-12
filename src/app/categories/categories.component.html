@@ -1,19 +1,20 @@
 <div class="container-fluid">
   <p></p>
-  <div class="form-group row">
+  <div class="form-group row" *ngIf="!showCategoryForm">
     <div class="col-sm-6 text-right">
-      <a *ngIf="!showForm" class="btn btn-success roundbutton" (click)="showForm=true" title="Add New Category">
+      <a  class="btn btn-success roundbutton" (click)="showCategoryForm=true" title="Add New Category">
         <h2>+</h2>
       </a>
     </div>
   </div>
 
-  <span *ngIf="showForm">
+  <div *ngIf="showCategoryForm">
     <form id="categoryForm" (submit)="save()">
+      <input type="hidden" [(ngModel)]="category.id">
       <div class="form-group row">
         <div class="col-sm-6">
           <label class="col-form-label">Category Name</label>
-          <input type="text" name="categoryName" class="form-control" id="CategoryName" required>
+          <input type="text" name="category.name" [(ngModel)]="category.name" class="form-control" id="CategoryName" required>
         </div>
       </div>
 
@@ -22,13 +23,14 @@
             <label class="col-form-label">Category Color</label>
             <input
               class="form-control"
-              [(colorPicker)]="color"
-              [style.background]="color"
-              (colorPickerChange)="color"
+              [(colorPicker)]="category.colorCode"
+              [style.background]="category.colorCode"
+              (colorPickerChange)="category.colorCode"
               cpPosition = "top-right"
               cpDialogDisplay="inline"
               cpToggle=true
-              name="color"
+              name="category.colorCode"
+              [(ngModel)]="category.colorCode"
               id="Color"
               readonly="true"
               cpDisableInput="true"
@@ -40,9 +42,23 @@
       <div class="form-group row text-center">
         <div class="col-sm-6">
           <button type="submit" class="btn btn-primary bg-lrg" > &nbsp; Save &nbsp; </button> &nbsp;&nbsp;
-          <button type="submit" class="btn btn-secondary" (click)="showForm=false">Cancel</button>
+          <button type="submit" class="btn btn-secondary" (click)="showCategoryForm=false">Cancel</button>
         </div>
       </div>
     </form>
-  </span>
+  </div>
+
+  <div id="CategoryList" *ngIf="!showCategoryForm">
+      <span *ngFor="let category of categoryList">
+          <div class="form-group row " style="padding-left: 20px;" (click)="editCategory(category)">
+            <input type="hidden" [(ngModel)]="category.id">
+            <div class="col-sm-4">
+              <span class="categoryColorBox" [ngStyle]="{'background-color': category.colorCode}" ></span>
+              <span style="text-align: justify;"> {{category.name}} </span>
+
+            </div>
+          </div>
+        </span>
+  </div>
+
 </div>

@@ -1,23 +1,67 @@
 <div class="container-fluid">
   <p></p>
+  <div class="col-sm-6 text-right" *ngIf="showProgressBar">
+    <a *ngIf="!showForm" class="btn btn-success roundbutton" (click)="showProgressBar=false"
+      title="Add New Budget Category">
+      <h2>+</h2>
+    </a>
+  </div>
 
-  <span *ngFor="let budget of budgetList">
+  <div id="New_Category_Budget" *ngIf="!showProgressBar">
     <div class="form-group row">
       <div class="col-sm-6">
-        <div class="clearfix">
-          <span class="float-left">{{budget.budgetCategoryName}}</span>
-          <span class="float-right">{{budget.totalBudgetAmount}}</span>
-        </div>
-        <div class="progress" style="height:20px">
-          <div class="progress-bar" role="progressbar"
-            [ngStyle]="{'width.%': budget.spentAmountPercentage, 'background-color':budget.categoryColorCode}" aria-valuenow="25"
-            aria-valuemin="0" aria-valuemax="100"> {{budget.spentAmountPercentage}}% </div>
-        </div>
-        <div class="clearfix">
-          <span class="float-left">{{budget.spentAmount}} <small>spent</small> </span>
-          <span class="float-right">{{budget.remainingAmount}} <small>to use</small> </span>
-        </div>
+        <h3 class="display-6 text-center">New Budget Category</h3>
       </div>
     </div>
-  </span>
+    <form id="categoryForm" (submit)="save()">
+      <div class="form-group row">
+        <div class="col-sm-6">
+          <label class="col-form-label">Category Name</label>
+          <select class="custom-select btn-outline-primary" name="categories" id="Categories">
+              <option>Bill</option>
+              <option>Housing</option>
+              <option>Transportation</option>
+              <option>Shopping</option>
+              <option>Entertainment</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-6">
+          <label class="col-form-label">Budget Limit Amount</label>
+          <input type="number" name="categoryName" class="form-control" id="limitAmount" required>
+        </div>
+      </div>
+      <div class="form-group row"></div>
+      <div class="form-group row text-center">
+        <div class="col-sm-6">
+          <button type="submit" class="btn btn-primary bg-lrg"> &nbsp; Save &nbsp; </button> &nbsp;&nbsp;
+          <button type="submit" class="btn btn-secondary" (click)="showProgressBar=true">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div id="progress-bar" *ngIf="showProgressBar">
+    <span *ngFor="let budget of budgetList">
+      <div class="form-group row">
+        <div class="col-sm-6">
+          <div class="clearfix">
+            <span class="float-left">{{budget.budgetCategoryName}}</span>
+            <span class="float-right">{{budget.totalBudgetAmount}}</span>
+          </div>
+          <div class="progress" style="height:20px">
+            <div class="progress-bar" role="progressbar"
+              [ngStyle]="{'width.%': budget.spentAmountPercentage, 'background-color':budget.categoryColorCode}"
+              aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"> {{budget.spentAmountPercentage}}% </div>
+          </div>
+          <div class="clearfix">
+            <span class="float-left">{{budget.spentAmount}} <small>spent</small> </span>
+            <span class="float-right">{{budget.remainingAmount}} <small>to use</small> </span>
+          </div>
+        </div>
+      </div>
+    </span>
+  </div>
+
 </div>

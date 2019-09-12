@@ -5,7 +5,7 @@
       <div class="form-group row">
         <div class="col-3 text-right">
               <div class="custom-control custom-radio">
-                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked="">
+                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
                 <label class="custom-control-label" for="customRadio1">Expense</label>
               </div>
         </div>
@@ -19,31 +19,31 @@
     <div class="form-group row">
         <div class="col-sm-6">
           <label class="col-form-label" >Categories</label>
-          <select class="form-control" name="categories" id="Categories">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
+          <select class="custom-select btn-outline-primary" name="categories" id="Categories"  required>
+              <option>Bill</option>
+              <option>Housing</option>
+              <option>Transportation</option>
+              <option>Shopping</option>
+              <option>Entertainment</option>
+          </select>
         </div>
     </div>
     <div class="form-group row">
         <div class="col-sm-6">
           <label class="col-form-label" >Description</label>
-          <input type="text" name="description" class="form-control" id="Description">
+          <input type="text" name="description" class="form-control" id="Description" required>
         </div>
     </div>
     <div class="form-group row">
         <div class="col-sm-6">
           <label class="col-form-label" >Amount</label>
-          <input type="text" name="amount" class="form-control" id="Amount">
+          <input type="number" name="amount" class="form-control" id="Amount"  required>
         </div>
     </div>
     <div class="form-group row">
         <div class="col-sm-6">
           <label class="col-form-label" >Date</label>
-          <input type="date" name="date" class="form-control" id="Date">
+          <input type="date" name="date" class="form-control" id="Date"  required>
         </div>
     </div>
     <div class="form-group row text-center">
