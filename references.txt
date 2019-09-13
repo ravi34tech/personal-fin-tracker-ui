@@ -25,3 +25,24 @@
 
 11). https://www.w3schools.com/css/css_text.asp
 
+
+
+commands
+--------
+
+-> ng g application <name>
+
+-> ng g c <component-name>
+
+-> ng g class <name>
+
+-> ng g enum <name>
+
+-> ng g interface <name>
+
+-> ng g module <name>
+
+-> ng g pipe <name>
+
+-> ng g service <name>
+

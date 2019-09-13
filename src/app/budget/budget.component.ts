@@ -18,9 +18,7 @@ export class BudgetComponent implements OnInit {
 
 
   ngOnInit() {
-    console.info("calling onInit...");
     this.budgetList = mockBudgetList;
-    console.info(this.budgetList);
   }
 
   public addNewBudgetCategory() {

@@ -7,6 +7,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { ReportsComponent } from './reports/reports.component';
 import { TransactionListComponent } from './transaction-list/transaction-list.component';
 import { LoginComponent } from './login/login.component';
+import { TransactionSummaryComponent } from './transaction-summary/transaction-summary.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'graph',  component: GraphsComponent },
   { path: 'categories',  component: CategoriesComponent },
   { path: 'report',  component: ReportsComponent },
+  { path: 'summary', component: TransactionSummaryComponent},
 
 ];
 

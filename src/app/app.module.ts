@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { FormsModule } from '@angular/forms';
 import { ColorPickerModule } from 'ngx-color-picker';
+import { TransactionSummaryComponent } from './transaction-summary/transaction-summary.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ColorPickerModule } from 'ngx-color-picker';
     CategoriesComponent,
     ReportsComponent,
     TransactionListComponent,
-    LoginComponent
+    LoginComponent,
+    TransactionSummaryComponent
   ],
   imports: [
     BrowserModule,

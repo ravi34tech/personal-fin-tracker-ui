@@ -27,3 +27,10 @@ div.transactionList {
   padding-right: 10px;
 }
 
+div.summary {
+  padding: 10px 10px;
+  font-size: large;
+  font-weight: bold;
+}
+
+
