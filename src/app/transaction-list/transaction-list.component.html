@@ -1,5 +1,25 @@
-<div class="container-fluid jumbotron">
-
-  <p class="display-3"> transaction List works!</p>
+<div class="container-fluid">
+  <p></p>
+<div id="transactionList" class="transactionList" *ngFor="let transaction of transactionList" >
+  <div class="form-group row">
+    <div class="col-sm-6 transaction">
+        <div class="clearfix">
+            <h6>
+              <span class="float-left">{{transaction.description}}</span>
+              <span class="float-right">
+                <span *ngIf="transaction.trxType === 1">-</span>${{transaction.amount}}
+              </span>
+            </h6>
+        </div>
+        <div class="clearfix">
+            <div class="float-left categoryColorBoxBadge"
+                  [ngStyle]="{'background-color': transaction.category.colorCode}">
+                  {{transaction.category.name}}
+            </div>
+            <span class="float-right small">{{transaction.purchasedDate}}</span>
+        </div>
+    </div>
+  </div>
+</div>
 
 </div>

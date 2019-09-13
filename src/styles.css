@@ -4,12 +4,26 @@
   we configured the CSS in angular.json file for both css and js script files
 */
 
-.roundbutton {border-radius: 100%;}
+a.roundbutton {border-radius: 100%;}
 
-.categoryColorBox {
-  display: inline-block;; /* the default for span */
-  width: 20px;
+div.transaction {
+  border: 0.1px solid rgb(199, 187, 187);
+  height: 50px;
+}
+
+div.categoryColorBoxBadge {
+  display: inline-block;
   height: 20px;
-  padding: 5px;
+  border: 0.1px solid rgb(155, 153, 153);
+  padding: 0px 10px 10px;
+  text-align: center;
+  font-size: 75%;
+  text-align: center;
+  white-space: nowrap;
+}
+
+div.transactionList {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 

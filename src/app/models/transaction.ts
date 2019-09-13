@@ -3,7 +3,7 @@ export class Transaction {
   id: number;
   description: string;
   amount: number;
-  purchasedDate: Date;
+  purchasedDate: string;
   trxType: number;
   category: Category;
 }

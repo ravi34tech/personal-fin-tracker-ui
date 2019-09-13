@@ -1,5 +1,5 @@
 import { Budget } from './app/models/budget';
-import { Category } from './app/models/transaction';
+import { Category, Transaction } from './app/models/transaction';
 
 export const mockBudgetList: Budget[] = [
   {
@@ -61,15 +61,235 @@ export const mockCategoryList: Category[] = [
       colorCode: '#28a745'
     },
     {
-      id: 1,
+      id: 4,
       name: 'Shopping',
       colorCode: '#fd7e14'
     },
     {
-      id: 1,
+      id: 5,
       name: 'Entertainment',
       colorCode: '#343a40'
+    },
+];
+
+export const mockTransactionList: Transaction[] = [
+
+  {
+    id : 1,
+    description: 'Movie',
+    amount: 150,
+    purchasedDate: '10/Sep/2019',
+    trxType: 1,
+    category: {
+      id: 5,
+      name: 'Entertainment',
+      colorCode: '#343a40'
+    },
+  },
+  {
+    id : 2,
+    description: 'Shopping did',
+    amount: 3400,
+    purchasedDate: '9/Sep/2019',
+    trxType: 1,
+    category: {
+      id: 4,
+      name: 'Shopping',
+      colorCode: '#fd7e14'
+    },
+  },
+  {
+    id : 3,
+    description: 'Given to Mom',
+    amount: 15000,
+    purchasedDate: '1/Sep/2019',
+    trxType: 1,
+    category: {
+      id: 3,
+      name: 'Transportation',
+      colorCode: '#28a745'
     }
+  },
+  {
+    id : 4,
+    description: 'House Rent paid',
+    amount: 10000,
+    purchasedDate: '2/Sep/2019',
+    trxType: 1,
+    category:  {
+      id: 2,
+      name: 'Housing',
+      colorCode: '#e83e8c'
+    }
+  },
+  {
+    id : 5,
+    description: 'Dish TV Bill',
+    amount: 300,
+    purchasedDate: '5/Sep/2019',
+    trxType: 1,
+    category: {
+      id: 1,
+      name: 'Bill',
+      colorCode: '#6610f2'
+    }
+  },
+  {
+    id : 5,
+    description: 'Dish TV Bill',
+    amount: 300,
+    purchasedDate: '5/Sep/2019',
+    trxType: 1,
+    category: {
+      id: 1,
+      name: 'Bill',
+      colorCode: '#6610f2'
+    }
+  },
+  {
+    id : 5,
+    description: 'Dish TV Bill',
+    amount: 300,
+    purchasedDate: '5/Sep/2019',
+    trxType: 1,
+    category: {
+      id: 1,
+      name: 'Bill',
+      colorCode: '#6610f2'
+    }
+  },
+  {
+    id : 5,
+    description: 'Dish TV Bill',
+    amount: 300,
+    purchasedDate: '5/Sep/2019',
+    trxType: 1,
+    category: {
+      id: 1,
+      name: 'Bill',
+      colorCode: '#6610f2'
+    }
+  },
+  {
+    id : 5,
+    description: 'Dish TV Bill',
+    amount: 300,
+    purchasedDate: '5/Sep/2019',
+    trxType: 1,
+    category: {
+      id: 1,
+      name: 'Bill',
+      colorCode: '#6610f2'
+    }
+  },
+  {
+    id : 5,
+    description: 'Dish TV Bill',
+    amount: 300,
+    purchasedDate: '5/Sep/2019',
+    trxType: 1,
+    category: {
+      id: 1,
+      name: 'Bill',
+      colorCode: '#6610f2'
+    }
+  },
+  {
+    id : 5,
+    description: 'Dish TV Bill',
+    amount: 300,
+    purchasedDate: '5/Sep/2019',
+    trxType: 1,
+    category: {
+      id: 1,
+      name: 'Bill',
+      colorCode: '#6610f2'
+    }
+  },
+  {
+    id : 5,
+    description: 'Dish TV Bill',
+    amount: 300,
+    purchasedDate: '5/Sep/2019',
+    trxType: 1,
+    category: {
+      id: 1,
+      name: 'Bill',
+      colorCode: '#6610f2'
+    }
+  },
+  {
+    id : 5,
+    description: 'Dish TV Bill',
+    amount: 300,
+    purchasedDate: '5/Sep/2019',
+    trxType: 1,
+    category: {
+      id: 1,
+      name: 'Bill',
+      colorCode: '#6610f2'
+    }
+  },
+  {
+    id : 5,
+    description: 'Dish TV Bill',
+    amount: 300,
+    purchasedDate: '5/Sep/2019',
+    trxType: 1,
+    category: {
+      id: 1,
+      name: 'Bill',
+      colorCode: '#6610f2'
+    }
+  },
+  {
+    id : 5,
+    description: 'Dish TV Bill',
+    amount: 300,
+    purchasedDate: '5/Sep/2019',
+    trxType: 1,
+    category: {
+      id: 1,
+      name: 'Bill',
+      colorCode: '#6610f2'
+    }
+  },
+  {
+    id : 5,
+    description: 'Dish TV Bill',
+    amount: 300,
+    purchasedDate: '5/Sep/2019',
+    trxType: 1,
+    category: {
+      id: 1,
+      name: 'Bill',
+      colorCode: '#6610f2'
+    }
+  },
+  {
+    id : 5,
+    description: 'Dish TV Bill',
+    amount: 300,
+    purchasedDate: '5/Sep/2019',
+    trxType: 1,
+    category: {
+      id: 1,
+      name: 'Bill',
+      colorCode: '#6610f2'
+    }
+  },
+  {
+    id : 5,
+    description: 'Dish TV Bill',
+    amount: 300,
+    purchasedDate: '5/Sep/2019',
+    trxType: 1,
+    category: {
+      id: 1,
+      name: 'Bill',
+      colorCode: '#6610f2'
+    }
+  }
 ];
 
 

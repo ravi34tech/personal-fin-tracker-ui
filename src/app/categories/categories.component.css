@@ -1,8 +1,16 @@
 
-/*
-.categoryColorBox {
+
+span.categoryColorBox {
   display: inline-block;
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
   padding: 5px;
-} */
+  border: 0.5px solid black;
+}
+
+span.categoryColoroBoxLabel {
+  padding-left: 15px;
+  position: absolute;
+  top: -1px;
+}
+
