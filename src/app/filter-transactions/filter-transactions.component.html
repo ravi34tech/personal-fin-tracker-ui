@@ -1,0 +1,39 @@
+
+<ng-template #searchForm >
+    <form name="searchForm" id="searchForm" >
+    <div class="form-group row" >
+      <div class="col-sm-3">
+          <label class="col-form-label" >From Date</label>
+          <input type="date" name="fromDate" class="form-control" >
+
+          <label class="col-form-label" >To Date</label>
+          <input type="date" name="toDate" class="form-control" >
+      </div>
+      <div class="col-sm-3">
+          <label class="col-form-label" >Categories</label>
+          <select class="custom-select btn-outline-primary" >
+              <option >All Categories </option>
+            <ng-container *ngFor="let cate of categories">
+              <option >{{cate.name}} </option>
+            </ng-container>
+          </select>
+          <label class="col-form-label" >Description</label>
+          <input type="text" name="description" class="form-control" >
+      </div>
+    </div>
+    <div class="form-group row" >
+      <div class="col-sm-3">
+        <div class="form-group row"></div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary bg-lrg" > Search </button> &nbsp;&nbsp;
+            <button type="reset" class="btn btn-secondary" >Reset</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</ng-template>
+
+<div class="container-fluid">
+  <p></p>
+  <ng-container *ngTemplateOutlet="searchForm" [ngIf]="showFilterForm"></ng-container>
+</div>
