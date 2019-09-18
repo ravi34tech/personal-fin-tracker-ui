@@ -20,6 +20,7 @@ div.categoryColorBoxBadge {
   font-size: 75%;
   text-align: center;
   white-space: nowrap;
+  color:white;
 }
 
 div.transactionList {

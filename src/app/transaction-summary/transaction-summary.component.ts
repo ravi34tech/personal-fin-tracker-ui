@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Summary } from '../models/summary';
+import { mockSummary } from 'src/mock';
 
 @Component({
   selector: 'app-transaction-summary',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransactionSummaryComponent implements OnInit {
 
-  constructor() { }
+  public summary: Summary;
+  constructor() {
+
+  }
 
   ngOnInit() {
+    this.summary = mockSummary;
   }
 
 }

@@ -1,5 +1,6 @@
 import { Budget } from './app/models/budget';
 import { Category, Transaction } from './app/models/transaction';
+import { Summary } from './app/models/summary';
 
 export const mockBudgetList: Budget[] = [
   {
@@ -291,5 +292,17 @@ export const mockTransactionList: Transaction[] = [
     }
   }
 ];
+
+
+export const mockSummary: Summary = {
+  dataRange : '1-30 September 2019',
+  income: 100000,
+  expense: 50000,
+  balance: 50000,
+  annualBalace: 100000,
+  currentMonth: 9,
+  currencyType: '$'
+};
+
 
 

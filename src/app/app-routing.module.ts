@@ -8,6 +8,8 @@ import { ReportsComponent } from './reports/reports.component';
 import { TransactionListComponent } from './transaction-list/transaction-list.component';
 import { LoginComponent } from './login/login.component';
 import { TransactionSummaryComponent } from './transaction-summary/transaction-summary.component';
+import { BillsComponent } from './bills/bills.component';
+import { FilterTransactionsComponent } from './filter-transactions/filter-transactions.component';
 
 
 const routes: Routes = [
@@ -21,6 +23,8 @@ const routes: Routes = [
   { path: 'categories',  component: CategoriesComponent },
   { path: 'report',  component: ReportsComponent },
   { path: 'summary', component: TransactionSummaryComponent},
+  { path: 'bills', component: BillsComponent},
+  { path: 'filterTrxn', component: FilterTransactionsComponent},
 
 ];
 

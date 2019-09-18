@@ -1,24 +1,24 @@
 
-<div class="container-fluid alert-primary summary" >
+<div class="alert-primary summary" >
     <div class="form-group row"  >
       <div class="col-sm-6 text-center text">
           <button type="button" class="btn btn-success"> << </button>
-          <span style="padding: 10px 10px; text-decoration: underline;"> 1-30 September 2019 </span>
+          <span style="padding: 10px 10px; text-decoration: underline;"> {{summary.dataRange}} </span>
           <button type="button" class="btn btn-success"> >> </button>
       </div>
     </div>
     <div class="form-group row">
         <div class="clearfix col-sm-6">
           <span class="float-left" style="width: 50%; text-align: left;">
-            <span class="labelVal"> Income &nbsp; : $100000</span> <br/>
-            <span class="labelVal"> Balance &nbsp;: $40000</span>
+            <span class="labelVal"> Income &nbsp; : {{summary.currencyType}}{{summary.income}} </span> <br/>
+            <span class="labelVal"> Balance &nbsp;: {{summary.currencyType}}{{summary.balance}} </span>
           </span>
           <span class="float-right" style="width: 50%; text-align: right;">
-            <span> Expense : $60000 </span> <br />
-            <span> Anual Balance : $60000 </span>
+            <span> Expense : {{summary.currencyType}}{{summary.expense}} </span> <br />
+            <span> Annual Balance : {{summary.currencyType}}{{summary.annualBalace}}  </span>
           </span>
-
         </div>
     </div>
+
 
 </div>

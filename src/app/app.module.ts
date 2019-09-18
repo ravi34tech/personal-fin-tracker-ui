@@ -14,6 +14,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { FormsModule } from '@angular/forms';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { TransactionSummaryComponent } from './transaction-summary/transaction-summary.component';
+import { FilterTransactionsComponent } from './filter-transactions/filter-transactions.component';
+import { BillsComponent } from './bills/bills.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { TransactionSummaryComponent } from './transaction-summary/transaction-s
     ReportsComponent,
     TransactionListComponent,
     LoginComponent,
-    TransactionSummaryComponent
+    TransactionSummaryComponent,
+    FilterTransactionsComponent,
+    BillsComponent
   ],
   imports: [
     BrowserModule,

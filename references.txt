@@ -46,3 +46,15 @@ commands
 
 -> ng g service <name>
 
+
+Notes :
+-------
+
+# The <ng-template> is an Angular element for rendering HTML. It is never displayed directly. In fact, before rendering the view, Angular replaces the <ng-template> and its contents with a comment.
+  If there is no structural directive and you merely wrap some elements in a <ng-template>, those elements disappear.
+
+# The Angular <ng-container> is a grouping element that doesn't interfere with styles or layout because
+  Angular doesn't put it in the DOM.
+
+#
+
