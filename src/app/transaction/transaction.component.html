@@ -1,59 +1,77 @@
 <div class="container-fluid">
-    <!-- <hr class="my-4"> -->
-  <form>
-    <p></p>
+  <!-- <hr class="my-4"> -->
+  <p></p>
+  <ng-template #newTrxnForm [ngIf]="showAddForm">
+    <form>
       <div class="form-group row">
         <div class="col-3 text-right">
-              <div class="custom-control custom-radio">
-                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
-                <label class="custom-control-label" for="customRadio1">Expense</label>
-              </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
+            <label class="custom-control-label" for="customRadio1">Expense</label>
+          </div>
         </div>
         <div class="col-3">
-              <div class="custom-control custom-radio">
-                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                <label class="custom-control-label" for="customRadio2">Income</label>
-              </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+            <label class="custom-control-label" for="customRadio2">Income</label>
+          </div>
         </div>
-    </div>
-    <div class="form-group row">
+      </div>
+      <div class="form-group row">
         <div class="col-sm-6">
-          <label class="col-form-label" >Categories</label>
-          <select class="custom-select btn-outline-primary" name="categories" id="Categories"  required>
-              <option>Bill</option>
-              <option>Housing</option>
-              <option>Transportation</option>
-              <option>Shopping</option>
-              <option>Entertainment</option>
+          <label class="col-form-label">Categories</label>
+          <select class="custom-select btn-outline-primary" name="categories" id="Categories" required>
+            <option>Bill</option>
+            <option>Housing</option>
+            <option>Transportation</option>
+            <option>Shopping</option>
+            <option>Entertainment</option>
           </select>
         </div>
-    </div>
-    <div class="form-group row">
+      </div>
+      <div class="form-group row">
         <div class="col-sm-6">
-          <label class="col-form-label" >Description</label>
+          <label class="col-form-label">Description</label>
           <input type="text" name="description" class="form-control" id="Description" required>
         </div>
-    </div>
-    <div class="form-group row">
+      </div>
+      <div class="form-group row">
         <div class="col-sm-6">
-          <label class="col-form-label" >Amount</label>
-          <input type="number" name="amount" class="form-control" id="Amount"  required>
+          <label class="col-form-label">Amount</label>
+          <input type="number" name="amount" class="form-control" id="Amount" required>
         </div>
-    </div>
-    <div class="form-group row">
+      </div>
+      <div class="form-group row">
         <div class="col-sm-6">
-          <label class="col-form-label" >Transaction Date</label>
-          <input type="date" name="date" class="form-control" id="Date"  required>
+          <label class="col-form-label">Transaction Date</label>
+          <input type="date" name="date" class="form-control" id="Date" required>
         </div>
-    </div>
-    <div class="form-group row text-center">
+      </div>
+      <div class="form-group row text-center">
         <div class="col-sm-6">
           <button type="submit" class="btn btn-primary bg-lrg">
-              <!-- <span class="spinner-grow spinner-grow-sm"></span>  -->
-              Save</button> &nbsp;&nbsp;
+            <!-- <span class="spinner-grow spinner-grow-sm"></span>  -->
+            Save</button> &nbsp;&nbsp;
           <button type="submit" class="btn btn-secondary">Cancel</button>
         </div>
+      </div>
+    </form>
+  </ng-template>
+
+  <ng-template #TransactionListTemp [ngIf]="!showAddForm">
+    <div class="form-group row">
+      <div class="col-sm-6 text-right">
+        <a *ngIf="!showForm" class="btn btn-success roundbutton" (click)="showNewTrxn()" title="Add New Transaction">
+          <h2>+</h2>
+        </a>
+      </div>
     </div>
-  </form>
+    <div class="form-group row"></div>
+    <app-transaction-list [transactionList]="trxnList"> </app-transaction-list>
+  </ng-template>
+
+  <ng-container #newTrxnForm> </ng-container>
+  <ng-container #TransactionListTemp> </ng-container>
+
 
 </div>

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Transaction } from '../models/transaction';
 import { mockTransactionList } from 'src/mock';
+import { FinancetrackerService } from '../services/financetracker.service';
 
 @Component({
   selector: 'app-transaction-list',
@@ -9,12 +10,12 @@ import { mockTransactionList } from 'src/mock';
 })
 export class TransactionListComponent implements OnInit {
 
-  public transactionList: Array<Transaction>;
+  @Input() public transactionList: Array<Transaction>;
 
-  constructor() { }
+  constructor(private financetrackerService: FinancetrackerService) { }
 
   ngOnInit() {
-    this.transactionList = mockTransactionList;
+   // this.transactionList = this.financetrackerService.getTransactionList();
   }
 
 }

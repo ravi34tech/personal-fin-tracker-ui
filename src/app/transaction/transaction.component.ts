@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Transaction } from '../models/transaction';
+import { FinancetrackerService } from '../services/financetracker.service';
 
 @Component({
   selector: 'app-transaction',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransactionComponent implements OnInit {
 
-  constructor() { }
+  public showAddForm = false;
+  public trxnList: Transaction[];
+
+  constructor(private financetrackService: FinancetrackerService) { }
 
   ngOnInit() {
+    this.trxnList = this.financetrackService.getTransactionList();
+  }
+
+  showNewTrxn() {
+    this.showAddForm = true;
+    this.trxnList = [];
   }
 
 }

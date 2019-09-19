@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: '',  redirectTo: 'transactionList', pathMatch: 'full' },
   { path: 'login',  component: LoginComponent },
   { path: 'transaction',  component: TransactionComponent },
-  { path: 'transactionList',  component: TransactionListComponent },
+  { path: 'transactionList',  component: TransactionComponent },
   { path: 'budget',  component: BudgetComponent },
   { path: 'graph',  component: GraphsComponent },
   { path: 'categories',  component: CategoriesComponent },
