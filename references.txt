@@ -27,6 +27,11 @@
 
 12). https://www.freecodecamp.org/news/everything-you-need-to-know-about-ng-template-ng-content-ng-container-and-ngtemplateoutlet-4b7b51223691/
 
+13). https://useiconic.com/open/
+
+14). https://fontawesome.com/how-to-use/on-the-web/setup/hosting-font-awesome-yourself
+
+15). https://www.w3schools.com/icons/fontawesome5_intro.asp     (we can see the styles..)
 
 
 commands

@@ -1,5 +1,6 @@
 <div class="container-fluid">
   <!-- <hr class="my-4"> -->
+  <!-- <div class="dropdown-divider"></div> -->
   <p></p>
   <ng-template #newTrxnForm [ngIf]="showAddForm">
     <form>
@@ -59,15 +60,17 @@
   </ng-template>
 
   <ng-template #TransactionListTemp [ngIf]="!showAddForm">
-    <div class="form-group row">
-      <div class="col-sm-6 text-right">
-        <a *ngIf="!showForm" class="btn btn-success roundbutton" (click)="showNewTrxn()" title="Add New Transaction">
-          <h2>+</h2>
-        </a>
-      </div>
-    </div>
-    <div class="form-group row"></div>
+  <div class="form-group row"></div>
     <app-transaction-list [transactionList]="trxnList"> </app-transaction-list>
+    <div class="form-group row addIcon">
+        <div class="col-sm-6">
+          <div class="clearfix">
+            <button *ngIf="!showForm" class="btn btn-success rounded-circle float-right" (click)="showNewTrxn()" title="Add New Transaction">
+              <h2>+</h2>
+            </button>
+        </div>
+        </div>
+      </div>
   </ng-template>
 
   <ng-container #newTrxnForm> </ng-container>

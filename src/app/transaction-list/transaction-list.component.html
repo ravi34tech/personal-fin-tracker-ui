@@ -1,7 +1,8 @@
 
 <div id="transactionList" class="transactionList" *ngFor="let transaction of transactionList" >
-  <div class="form-group row">
-    <div class="col-sm-6 transaction">
+  <div class="form-group row" >
+    <div class="col-sm-6 transaction" id="btnGroupDrop2" role="group" data-toggle="dropdown" aria aria-haspopup="true" aria-expanded="false">
+        <!-- <hr class="my-1"> -->
         <div class="clearfix">
             <h6>
               <span class="float-left">{{transaction.description}}</span>
@@ -17,6 +18,11 @@
             </div>
             <span class="float-right small">{{transaction.purchasedDate}}</span>
         </div>
+    </div>
+    <!-- <button id="btnGroupDrop2" type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button> -->
+    <div class="dropdown-menu alert-secondary " aria-labelledby="btnGroupDrop2" >
+      <a class="dropdown-item" href="#">Edit</a>
+      <a class="dropdown-item" href="#">Delete</a>
     </div>
   </div>
 </div>

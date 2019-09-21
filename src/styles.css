@@ -4,8 +4,15 @@
   we configured the CSS in angular.json file for both css and js script files
 */
 
-a.roundbutton {border-radius: 100%;}
+a.roundbutton {
+  border-radius: 100%;
+}
 
+div.addIcon {
+  /* position: fixed; */
+  bottom: 10px;
+  position: sticky;
+}
 div.transaction {
   border: 0.1px solid rgb(199, 187, 187);
   height: 50px;
