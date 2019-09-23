@@ -17,6 +17,7 @@ import { TransactionSummaryComponent } from './transaction-summary/transaction-s
 import { FilterTransactionsComponent } from './filter-transactions/filter-transactions.component';
 import { BillsComponent } from './bills/bills.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AlertComponent } from './alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     TransactionSummaryComponent,
     FilterTransactionsComponent,
-    BillsComponent
+    BillsComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,

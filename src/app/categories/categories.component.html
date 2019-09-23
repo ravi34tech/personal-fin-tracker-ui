@@ -1,75 +1,72 @@
 <div class="container-fluid">
+  <app-alert [response]="response"></app-alert>
   <p></p>
-  <!-- <div class="form-group row" *ngIf="!showCategoryForm">
-    <div class="col-sm-6 text-right">
-      <a  class="btn btn-success roundbutton" (click)="addNewCategory()" title="Add New Category">
-        <h2>+</h2>
-      </a>
-    </div>
-  </div> -->
-
   <div *ngIf="showCategoryForm">
-    <form id="categoryForm" (ngSubmit)="save()" #newCategory="ngForm" name="category">
-      <input type="hidden" [(ngModel)]="bean.categoryId" name="bean.categoryId">
+    <form id="categoryForm" (ngSubmit)="catForm.form.valid && save()" #catForm="ngForm" novalidate>
+      <input type="hidden" [(ngModel)]="bean.categoryId" name="categoryId">
       <div class="form-group row">
         <div class="col-sm-6">
           <label class="col-form-label">Category Name</label>
-          <input type="text" name="bean.categoryName" [(ngModel)]="bean.categoryName" value="{{bean.categoryName}}"
-          class="form-control" id="CategoryName" required>
+          <input type="text" name="categoryName" #name="ngModel" [(ngModel)]="bean.categoryName"
+          class="form-control" id="CategoryName" required maxlength="30" minlength="4"
+          [ngClass]="{ 'is-invalid': ( name.touched || catForm.submitted ) && name.invalid }">
+          <div *ngIf="name.invalid && ((name.dirty || name.touched) || catForm.submitted)" class="invalid-feedback">
+            <div *ngIf="name.errors.required">Name is required </div>
+            <div *ngIf="name.errors.maxlength">Name length not more than 30 characters </div>
+            <div *ngIf="name.errors.minlength">Name length not less than 4 characters </div>
+          </div>
         </div>
       </div>
 
       <div class="form-group row">
-          <div class="col-sm-6">
-            <label class="col-form-label">Category Color</label>
-            <input
-              class="form-control"
-              [(colorPicker)]="bean.categoryColor"
-              [style.background]="bean.categoryColor"
-              (colorPickerChange)="bean.categoryColor"
-              cpPosition = "top-right"
-              cpDialogDisplay="inline"
-              cpToggle="true"
-              name="bean.categoryColor"
-              [(ngModel)]="bean.categoryColor"
-              id="Color"
-              readonly="true"
-              cpDisableInput="false"
-              required
-            >
-          </div>
+        <div class="col-sm-6">
+          <label class="col-form-label">Category Color</label>
+          <input class="form-control" [(colorPicker)]="bean.categoryColor" [style.background]="bean.categoryColor"
+            (colorPickerChange)="bean.categoryColor" cpPosition="top-right" cpDialogDisplay="inline" cpToggle="true"
+            name="categoryColor" [(ngModel)]="bean.categoryColor" id="Color" readonly="true" cpDisableInput="false"
+            required #color="ngModel"
+            [ngClass]="{ 'is-invalid': ( color.touched || catForm.submitted ) && color.invalid }">
+
+            <div *ngIf="color.invalid && ((color.dirty || color.touched) || catForm.submitted)" class="invalid-feedback">
+                <div *ngIf="color.errors.required">Color is required </div>
+            </div>
+        </div>
       </div>
       <div class="form-group row"></div>
       <div class="form-group row text-center">
         <div class="col-sm-6">
-          <button type="submit" class="btn btn-primary bg-lrg" > &nbsp; Save &nbsp; </button> &nbsp;&nbsp;
-          <button type="button" class="btn btn-secondary" (click)="showCategoryForm=false">Cancel</button>
+          <button class="btn btn-primary bg-lrg"> &nbsp; Save &nbsp; </button> &nbsp;&nbsp;
+          <button type="button" class="btn btn-secondary" (click)="hideForm()">Cancel</button>
         </div>
       </div>
     </form>
   </div>
 
-  <div id="CategoryList" *ngIf="!showCategoryForm">
-      <span *ngFor="let category of categoryList">
-          <div class="form-group row " style="padding-left: 20px;" (click)="editCategory(category)">
-            <input type="hidden" [(ngModel)]="category.id">
-            <div class="col-sm-4">
-              <span class="categoryColorBox" [ngStyle]="{'background-color': category.colorCode}" > </span>
-              <span class="categoryColoroBoxLabel" > {{category.name}} </span>
+  <ng-template #categoryAllList [ngIf]="!showCategoryForm">
+    <span *ngFor="let category of categoryList">
+      <div class="form-group row" style="padding-left: 20px;">
+        <div class="col-sm-4" id="btnGroupDrop2" role="group" data-toggle="dropdown" aria aria-haspopup="true" aria-expanded="false">
+          <input type="hidden" [(ngModel)]="category.id">
+          <span class="categoryColorBox" [ngStyle]="{'background-color': category.colorCode}"> </span>
+          <span class="categoryColoroBoxLabel cursor"> {{category.name}} </span>
+        </div>
+        <div class="dropdown-menu alert-secondary dropdown-menu-center" aria-labelledby="btnGroupDrop2">
+          <li><a class="dropdown-item" (click)="editCategory(category)">Edit</a></li>
+          <li><a class="dropdown-item" (click)="deleteCategory(category)">Delete</a></li>
+        </div>
+      </div>
+    </span>
+  </ng-template>
 
-            </div>
-          </div>
-        </span>
-  </div>
+
   <div class="form-group row addIcon" *ngIf="!showCategoryForm">
-      <div class="col-sm-6">
-        <div class="clearfix">
-          <button *ngIf="!showForm" class="btn btn-success rounded-circle float-right"
-          (click)="addNewCategory()" title="Add New Category">
-            <h2>+</h2>
-          </button>
+    <div class="col-sm-6">
+      <div class="clearfix">
+        <button class="btn btn-success rounded-circle float-right" (click)="addNewCategory()" title="Add New Category">
+          <h2>+</h2>
+        </button>
       </div>
-      </div>
+    </div>
   </div>
 
 </div>

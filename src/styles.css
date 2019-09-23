@@ -41,4 +41,17 @@ div.summary {
   font-weight: bold;
 }
 
+.cursor {
+  cursor: pointer;
+}
+
+span.categoryColorBox {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  border: 0.5px solid black;
+}
+
+
 

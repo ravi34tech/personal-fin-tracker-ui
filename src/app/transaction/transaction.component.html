@@ -23,12 +23,14 @@
       <div class="form-group row">
         <div class="col-sm-6">
           <label class="col-form-label">Categories</label>
-          <select class="custom-select btn-outline-primary" name="categories" id="Categories" required>
-            <option>Bill</option>
-            <option>Housing</option>
-            <option>Transportation</option>
-            <option>Shopping</option>
-            <option>Entertainment</option>
+          <select class="form-control" name="categories" id="Categories" required>
+            <option value="">Select Category</option>
+            <ng-container *ngFor="let catItem of categoryList">
+                <option value="catItem.id" class="text-center">
+                  <span class='categoryColorBox' [ngStyle]='{"background-color": catItem.colorCode }' ></span>
+                  <strong><span class="categoryColoroBoxLabel"> {{catItem.name}} </span> </strong>
+                </option>
+            </ng-container>
           </select>
         </div>
       </div>
@@ -67,7 +69,7 @@
     <div class="form-group row addIcon">
         <div class="col-sm-6">
           <div class="clearfix">
-            <button *ngIf="!showForm" class="btn btn-success rounded-circle float-right" (click)="showNewTrxn()" title="Add New Transaction">
+            <button class="btn btn-success rounded-circle float-right" (click)="showNewTrxn()" title="Add New Transaction">
               <h2>+</h2>
             </button>
         </div>

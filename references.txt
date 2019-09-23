@@ -37,6 +37,14 @@
 
 17). https://www.w3schools.com/bootstrap/bootstrap_collapse.asp
 
+18). https://jasonwatmore.com/post/2019/06/15/angular-8-template-driven-forms-validation-example (Form validations)
+
+19). https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor
+
+20). https://thdoan.github.io/bootstrap-select/examples.html
+
+21).
+
 commands
 --------
 
