@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Category } from '../models/transaction';
 import { mockCategoryList } from 'src/mock';
+import { FinanceTrackBean } from '../models/financeTrackBean';
+import { FinancetrackerService } from '../services/financetracker.service';
 
 @Component({
   selector: 'app-categories',
@@ -13,14 +15,17 @@ export class CategoriesComponent implements OnInit {
   public categoryList: Array<Category>;
   public category: Category;
   public colorCode: string;
+  public bean: FinanceTrackBean;
 
-  constructor() {
+  constructor(private financeTrackService: FinancetrackerService) {
     this.category = new Category();
     this.colorCode = '';
+    this.categoryList = [];
+    this.bean = new FinanceTrackBean();
   }
 
   ngOnInit() {
-    this.categoryList = mockCategoryList;
+    this.getAllCategories();
   }
 
   public addNewCategory() {
@@ -28,7 +33,23 @@ export class CategoriesComponent implements OnInit {
     this.category = {name: '', colorCode: '', id: 0 };
   }
 
+  public getAllCategories() {
+    this.financeTrackService.getCategoryList().subscribe(
+      response => {
+        if (response.status.toUpperCase() === 'SUCCESS') {
+          this.categoryList = response.categoryList;
+        }}
+    );
+  }
+
   public save() {
+    this.financeTrackService.saveCategory(this.bean).subscribe(
+      response => {
+        if (response.status.toUpperCase() === 'SUCCESS') {
+          this.categoryList.push(response.category);
+        }
+      }
+    );
     this.showCategoryForm = false;
   }
 

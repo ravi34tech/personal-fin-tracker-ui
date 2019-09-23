@@ -33,6 +33,9 @@
 
 15). https://www.w3schools.com/icons/fontawesome5_intro.asp     (we can see the styles..)
 
+16). https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp
+
+17). https://www.w3schools.com/bootstrap/bootstrap_collapse.asp
 
 commands
 --------

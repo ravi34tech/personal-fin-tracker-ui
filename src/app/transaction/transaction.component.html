@@ -1,9 +1,11 @@
+<app-transaction-summary [summary]="trxnSummary"></app-transaction-summary>
 <div class="container-fluid">
   <!-- <hr class="my-4"> -->
   <!-- <div class="dropdown-divider"></div> -->
-  <p></p>
+
   <ng-template #newTrxnForm [ngIf]="showAddForm">
-    <form>
+    <p></p>
+    <form #newTrxn >
       <div class="form-group row">
         <div class="col-3 text-right">
           <div class="custom-control custom-radio">
@@ -53,7 +55,7 @@
           <button type="submit" class="btn btn-primary bg-lrg">
             <!-- <span class="spinner-grow spinner-grow-sm"></span>  -->
             Save</button> &nbsp;&nbsp;
-          <button type="submit" class="btn btn-secondary">Cancel</button>
+          <button type="submit" class="btn btn-secondary" (click)="showAddForm=false">Cancel</button>
         </div>
       </div>
     </form>

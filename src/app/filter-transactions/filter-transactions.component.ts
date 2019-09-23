@@ -14,17 +14,26 @@ export class FilterTransactionsComponent implements OnInit {
   public categories: Category[];
   public trxnList: Transaction[];
 
-  constructor(private financetrackerService: FinancetrackerService) { }
+  constructor(private financeTrackService: FinancetrackerService) { }
 
   ngOnInit() {
-    this.categories = this.financetrackerService.getCategoryList();
-    this.trxnList = [];
+    this.getAllCategories();
+  }
+
+  public getAllCategories() {
+    this.financeTrackService.getCategoryList()
+    .subscribe(
+      response => {
+        if (response.status.toUpperCase() === 'SUCCESS') {
+          this.categories = response.categoryList;
+        }
+      });
   }
 
   public filterTransactions() {
     console.info("Searching...");
     this.showFilterForm = false;
-    this.trxnList = this.financetrackerService.getTransactionList();
+    this.trxnList = this.financeTrackService.getTransactionList();
   }
 
 }

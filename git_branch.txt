@@ -1,0 +1,8 @@
+
+Master branch
+--------------
+having the code fintrack contains transactions summary, Filter transactions,Budget,categories, icons
+Api intigration is not done.
+
+
+Git branch : fintrack_sep23 created on Sep-23-2019

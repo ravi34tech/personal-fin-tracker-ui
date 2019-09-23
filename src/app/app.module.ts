@@ -16,6 +16,7 @@ import { ColorPickerModule } from 'ngx-color-picker';
 import { TransactionSummaryComponent } from './transaction-summary/transaction-summary.component';
 import { FilterTransactionsComponent } from './filter-transactions/filter-transactions.component';
 import { BillsComponent } from './bills/bills.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,9 @@ import { BillsComponent } from './bills/bills.component';
     AppRoutingModule,
     FormsModule,
     BsDatepickerModule.forRoot(),
-    ColorPickerModule
+    ColorPickerModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

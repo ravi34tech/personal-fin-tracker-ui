@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Summary } from '../models/summary';
 import { mockSummary } from 'src/mock';
 
@@ -9,13 +9,14 @@ import { mockSummary } from 'src/mock';
 })
 export class TransactionSummaryComponent implements OnInit {
 
+  @Input()
   public summary: Summary;
   constructor() {
 
   }
 
   ngOnInit() {
-    this.summary = mockSummary;
+  //  this.summary = mockSummary;
   }
 
 }
